@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#102b50">
+  <meta name="description" content="Students Uran helps students discover universities, scholarships, and opportunities for their next step.">
+  <title>Students Uran — Find your next step</title>
+  <link rel="icon" href="assets/students-uran-logo.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="#home"><img src="assets/students-uran-logo.png" alt="Students Uran logo"><span><b>STUDENTS URAN</b><small>اُڑان · Your future, in reach</small></span></a>
+  <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">☰</button>
+  <nav class="nav"><a href="#opportunities">Opportunities</a><a href="#about">About</a><a href="#contact">Contact</a><a class="nav-cta" href="#opportunities">Explore now <span>↗</span></a></nav>
+</header>
+<main>
+  <section class="hero" id="home">
+    <div class="hero-copy">
+      <div class="eyebrow"><span class="dot"></span> A brighter path starts here</div>
+      <h1>Your future is bigger than <em>you think.</em></h1>
+      <p class="hero-lead">Discover universities, scholarships, and learning opportunities that can take you closer to your goals.</p>
+      <div class="hero-actions"><a class="button primary" href="#opportunities">Explore opportunities <span>→</span></a><a class="text-link" href="#about">Get to know us <span>↗</span></a></div>
+      <div class="hero-note"><span class="mini-star">✦</span><span>Useful information. Clear next steps. More possibilities.</span></div>
+    </div>
+    <div class="hero-art" aria-label="Students Uran logo artwork">
+      <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+      <div class="logo-card"><img src="assets/students-uran-logo.png" alt="Students Uran — اُڑان"></div>
+      <div class="float-card float-top"><span class="float-icon gold">✦</span><span><b>Keep aiming higher</b><small>One step at a time</small></span></div>
+      <div class="float-card float-bottom"><span class="float-icon blue">↗</span><span><b>New possibilities</b><small>Your next chapter awaits</small></span></div>
+    </div>
+  </section>
+  <section class="ticker"><div><span>UNIVERSITIES</span><i>✦</i><span>SCHOLARSHIPS</span><i>✦</i><span>STUDENT OPPORTUNITIES</span><i>✦</i><span>YOUR NEXT CHAPTER</span><i>✦</i></div></section>
+  <section class="section opportunities" id="opportunities">
+    <div class="section-heading"><div><div class="eyebrow">MAKE YOUR NEXT MOVE</div><h2>Find an opportunity<br><em>worth chasing.</em></h2></div><p>Start with a goal. Explore your options. Always check the official source before applying.</p></div>
+    <div class="search-bar"><span class="search-icon">⌕</span><input id="searchInput" type="search" placeholder="Search universities, scholarships, or subjects…" aria-label="Search opportunities"><span class="search-hint">SEARCH</span></div>
+    <div class="filter-row" role="group" aria-label="Filter opportunities"><button class="filter active" data-filter="all">All opportunities</button><button class="filter" data-filter="scholarship">Scholarships</button><button class="filter" data-filter="university">Universities</button></div>
+    <div id="opportunityGrid" class="opportunity-grid" aria-live="polite"></div>
+    <p id="emptyState" class="empty-state" hidden>No matching opportunities yet. Try another search.</p>
+    <p class="source-note"><span>ⓘ</span> Listings are a starting point, not a guarantee of eligibility. Confirm deadlines, requirements, and details on each official website.</p>
+  </section>
+  <section class="mission" id="about">
+    <div class="mission-mark"><img src="assets/students-uran-logo.png" alt=""></div>
+    <div class="mission-copy"><div class="eyebrow light">WHY STUDENTS URAN</div><h2>Good guidance can<br>change a <em>direction.</em></h2><p>Students Uran (اُڑان) is built around a simple idea: students deserve clearer access to information about higher education and scholarships. We bring useful starting points together so you can spend less time searching and more time planning your future.</p><a class="button light-button" href="#contact">Connect with us <span>→</span></a></div>
+    <div class="mission-decoration">اُڑان</div>
+  </section>
+  <section class="steps section">
+    <div class="eyebrow">YOUR PLAN, YOUR PACE</div><h2>Three steps to <em>get moving.</em></h2>
+    <div class="steps-grid">
+      <article><span class="step-number">01</span><div class="step-icon">⌕</div><h3>Explore</h3><p>Browse opportunities that match your interests and plans.</p></article>
+      <article><span class="step-number">02</span><div class="step-icon">↗</div><h3>Verify</h3><p>Read the official eligibility rules, dates, and application details.</p></article>
+      <article><span class="step-number">03</span><div class="step-icon">✦</div><h3>Take the step</h3><p>Prepare your documents and apply through the official channel.</p></article>
+    </div>
+  </section>
+  <section class="contact" id="contact"><div><div class="eyebrow light">LET'S STAY CONNECTED</div><h2>Have a question?<br><em>Reach out.</em></h2><p>Follow Students Uran for updates and useful student opportunities.</p></div><div class="contact-links"><a href="https://www.instagram.com/" target="_blank" rel="noreferrer"><span class="social-icon">◎</span><span><b>Instagram</b><small>Follow our updates</small></span><span class="arrow">↗</span></a><a href="mailto:hello@studentsuran.example"><span class="social-icon">✉</span><span><b>Email</b><small>Get in touch with the team</small></span><span class="arrow">↗</span></a></div></section>
+</main>
+<footer class="footer"><a class="footer-brand" href="#home"><img src="assets/students-uran-logo.png" alt=""><span>STUDENTS URAN <small>اُڑان</small></span></a><span>Helping students find their next step.</span><span>© <span id="year"></span> Students Uran</span></footer>
+<script src="app.js"></script>
+</body></html>

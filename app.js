@@ -1,0 +1,15 @@
+const opportunities = [
+ {type:"scholarship",title:"HEC Scholarships",desc:"Explore scholarship programmes and higher-education opportunities announced by Pakistan's Higher Education Commission.",label:"Pakistan · Official portal",url:"https://www.hec.gov.pk/"},
+ {type:"scholarship",title:"USEFP Opportunities",desc:"Find education and exchange programmes offered through the United States Educational Foundation in Pakistan.",label:"Pakistan · Official portal",url:"https://usefp.org/"},
+ {type:"scholarship",title:"DAAD Scholarships",desc:"Explore study and research funding opportunities in Germany. Check each programme's requirements and dates.",label:"Germany · Official portal",url:"https://www.daad.de/en/"},
+ {type:"university",title:"National University of Sciences & Technology",desc:"Review degree programmes, admissions information, and official announcements from NUST.",label:"Pakistan · University",url:"https://nust.edu.pk/"},
+ {type:"university",title:"Quaid-i-Azam University",desc:"Explore departments, degree programmes, and admissions updates at QAU in Islamabad.",label:"Pakistan · University",url:"https://qau.edu.pk/"},
+ {type:"university",title:"University of Peshawar",desc:"Visit the official university website for programmes, admissions notices, and student information.",label:"Pakistan · University",url:"https://uop.edu.pk/"}
+];
+const grid=document.getElementById("opportunityGrid"), search=document.getElementById("searchInput"), empty=document.getElementById("emptyState");
+let activeFilter="all";
+function render(){const term=search.value.trim().toLowerCase();const list=opportunities.filter(o=>(activeFilter==="all"||o.type===activeFilter)&&`${o.title} ${o.desc} ${o.label}`.toLowerCase().includes(term));grid.innerHTML=list.map((o,i)=>`<article class="op-card"><div class="op-top"><span class="tag ${o.type}">${o.type==="scholarship"?"✦ Scholarship":"⌂ University"}</span><span class="op-number">${String(i+1).padStart(2,"0")}</span></div><h3>${o.title}</h3><p>${o.desc}</p><div class="op-bottom"><small>${o.label}</small><a href="${o.url}" target="_blank" rel="noopener noreferrer">Visit official site <span>↗</span></a></div></article>`).join("");empty.hidden=list.length>0}
+document.querySelectorAll(".filter").forEach(b=>b.addEventListener("click",()=>{document.querySelectorAll(".filter").forEach(x=>x.classList.remove("active"));b.classList.add("active");activeFilter=b.dataset.filter;render()}));
+search.addEventListener("input",render);
+const toggle=document.querySelector(".menu-toggle"),nav=document.querySelector(".nav");toggle.addEventListener("click",()=>{const open=nav.classList.toggle("open");toggle.setAttribute("aria-expanded",String(open));toggle.textContent=open?"×":"☰"});nav.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>{nav.classList.remove("open");toggle.setAttribute("aria-expanded","false");toggle.textContent="☰"}));
+document.getElementById("year").textContent=new Date().getFullYear();render();
